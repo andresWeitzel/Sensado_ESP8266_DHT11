@@ -129,30 +129,111 @@ En la etapa inicial del proyecto se realizo el conexionado del sistema electrón
 
 
 
+### 1.0.3) Software
+
+<details>
+  <summary>Ver</summary>
+ 
+ <br>
+
+
+#### Consideraciones Diagrama Plantilla SensadoLabo BLYNK:
+
+![Index app](./doc/assets/img/f1.jpg)
+
+1) Cuando el ESP8266 pierda conexión nos notificara mediante una alerta a nuestro teléfono (previamente configurado tanto el número y los permisos del mismo).
+2) Nos notificara a nuestra cuenta de Twitter en caso de que haya algún problema.
+3) Podremos Generar los reportes diarios, semanales, mensuales a cerca de los valores obtenidos de humedad y temperatura.
+
+![Index app](./doc/assets/img/f2.jpg)
+4) En caso de que nuestras alertas fallaran tenemos una interfaz de información acerca de la conexión de nuestro dispositivo IOT.
+5) En caso de que nuestras alertas fallen, tendremos una interfaz de información acerca de la conexión de nuestro dispositivo IOT.
+
+
+![Index app](./doc/assets/img/f3.jpg)
+6) Se puede observar la variación de Temperatura en el gráfico, está configurado para un máximo de 50°.
+
+
+![Index app](./doc/assets/img/f4.jpg)
+7) Cuando se supere el umbral de temperatura establecido se producirán destellos de un led a modo de advertencia.
 
 
 
 
+#### Librerías y Funciones:
 
-| Elementos | 
-| ------------- | 
-| 1 ESP8266 Wemos D1. |
-| 1 Sensor de temperatura/humedad dht11 |
+* [IDE Arduino](https://docs.arduino.cc/software/ide-v1/tutorials/Windows)
+* [Driver Puerto Serial Esp](http://www.wch.cn/download/CH341SER_EXE.html)
+* Librerías:
+  * [SPI.h](https://docs.arduino.cc/learn/communication/spi)
+	* [ESP8266WiFi.h](https://github.com/esp8266/Arduino)
+	* [BlynkSimpleEsp8266.h](https://github.com/blynkkk/blynk-library)
+	* [SimpleTimer.h](https://github.com/jfturcot/SimpleTimer)
+	* [DHT.h](https://github.com/adafruit/DHT-sensor-library)
+
+* Funciones externas: 
+  * Serial.begin()
+ 	* Blynk.begin()
+	* dht.readHumidity()
+	* dht.readTemperature()
+	* Blynk.virtualWrite()
+	* timer.setInterval()
+  * Blynk.run()
+	* timer.run()
 
 
-| Driver| Funcion |
-| ------------- | ------------- |
-| http://www.wch.cn/download/CH341SER_EXE.html | Reconocimiento puerto serial |
-
-
- Librerias principales| Funcion |
-| ------------- | ------------- |
-| https://github.com/adafruit/DHT-sensor-library | Sensor de Temperatura/Humedad |
-| https://github.com/esp8266/Arduino  | Modulo wifi esp8266   |
-
-
-## Software
 - https://www.arduino.cc/
 - https://blynk.io/
 - https://fritzing.org/download/
 
+
+<br>
+
+</details>
+
+
+
+
+
+### 1.1) Ejecución del Proyecto [🔝](#índice-)
+
+<details>
+  <summary>Ver</summary>
+ 
+ 
+* Una vez creado un entorno de trabajo a través de algún ide, clonamos el proyecto
+```git
+git clone https://github.com/andresWeitzel/Sensado_ESP8266_DHT11
+```
+* Nos posicionamos sobre el proyecto
+```git
+cd 'projectName'
+```
+* Instalamos todas las librerías necesarias del proyecto desde el IDE de arduino
+```git
+#include <SPI.h>;
+#include <ESP8266WiFi.h>;
+#include <BlynkSimpleEsp8266.h>;
+#include <SimpleTimer.h>;
+#include <DHT.h>;
+```
+* Modificamos el auth generado desde BLYNK
+```git
+char auth[] = "_kc9BxuBX9RZHGFAk0TaZ59IT66TAdy1";
+```
+* Agregamos los valores correspondientes de nuestra red wifi
+```git
+char ssid[] = "xx";//nombre
+char pass[] = "xx";//password
+```
+* Añadimos un email para comprobar el punto de control de temperatura máxima
+```git
+Blynk.email("xx@hotmail.com","AVISO!!", "Se supero la temperatura maxima!!.");
+```
+* Nos conectamos desde BLYNK con la app. Escanear qr
+* App: https://play.google.com/store/apps/details?id=cc.blynk&hl=pt
+* Comprobamos que se reciban correctamente los datos.
+ 
+<br>
+
+</details>

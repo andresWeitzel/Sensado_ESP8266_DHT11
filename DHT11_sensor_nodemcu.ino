@@ -13,8 +13,8 @@ char auth[] = "_kc9BxuBX9RZHGFAk0TaZ59IT66TAdy1";
 
 // Sus credenciales de WiFi.
 // Establezca la contraseña en "" para redes abiertas.
-char ssid[] = "xx";
-char pass[] = "xx";
+char ssid[] = "xx";//nombre
+char pass[] = "xx";//password
 
 
 #define DHTPIN 2 // Pin del sensor
