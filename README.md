@@ -19,8 +19,9 @@ Sistema de Control de sensado de temperatura y humedad con una placa ESP8266 y u
     - [1.0.1) Introducción.](#101-introducción)
     - [1.0.2) Hardware.](#102-hardware)
     - [1.0.3) Software.](#103-software)
-    - [1.0.4) Conclusiones.](#143-conclusiones)
+    - [1.0.4) Resultados y errores.](#104-resultados-y-errores)
     - [1.0.5) F.O.D.A](#105-foda)
+    - [1.0.6) Conclusiones](#106-conclusiones)
  - [1.1) Ejecución del Proyecto.](#11-ejecución-del-proyecto-)
  - [1.2) Configurar un proyecto serverless desde cero](#12-configurar-un-proyecto-serverless-desde-cero-)
  - [1.3) Tecnologías.](#13-tecnologías-)
@@ -190,6 +191,58 @@ En la etapa inicial del proyecto se realizo el conexionado del sistema electrón
 - https://blynk.io/
 - https://fritzing.org/download/
 
+
+<br>
+
+</details>
+
+
+
+### 1.0.4) Resultados y errores
+
+<details>
+  <summary>Ver</summary>
+ 
+ <br>
+
+Se reemplazo el dispositivo principal (Arduino uno), por un ESP8266 WEmos d1, ya que este tiene la capacidad de un reducido costo
+en relación al primero y la comunicación directa a internet mediante una placa wifi(sin módulos externos), por ende se creó un programa para el ESP8266 utilizando el ide Arduino y las configuraciones que este precise(path, librerias, funciones,etc).Se implementaron librerias adicionales para la comunicación de la aplicación BLYNK mediante funciones de la mismas(detalle en apartado), se cambió la configuración del dispotivivo vía hardware y software, ya que al principio se utilizó un sensor de temperatura dht22 y otro tipo sonda, puesta a prueba correcta de la misma.
+
+
+<br>
+
+</details>
+
+
+
+### 1.0.5) F.O.D.A
+
+<details>
+  <summary>Ver</summary>
+ 
+ <br>
+
+
+| Fortalezas | Oportunidades | Debilidades | Amenazas |
+| ------------- | ------------- | ------------- | ------------- |
+| Fácil implementación y uso |  Bajo Costo y Proyecto Open Source | Lenguaje de Hipertexto | 
+| Conocimiento en Programación y Electrónica |  Inconvenientes en el uso de drivers y librerías para el ESP8266 |
+
+<br>
+
+</details>
+
+
+
+### 1.0.6) Conclusiones
+
+<details>
+  <summary>Ver</summary>
+ 
+ <br>
+
+
+El proyecto incentivo a la aproximación del uso de sistemas IOT (internet de las cosas) para automatizar tareas, no solo en el área propiamente a implementar sino en cualquier área. La electrónica y la informática evoluciona a pasos cada vez mas grandes, y desaprovechar esta situación nos lleva a gastos que pueden ser innecesarios o distribuciones de roles que son redundantes en ciertos aspectos. Este proyecto con un simple sensor de temperatura, una placa de control gestionada por un programa y conexión wifi, nos permite la comodidad de la gestión de dos magnitudes (humedad y temperatura) de forma remota sin la necesidad de que el personal este recorriendo la maquinaria implementada en el sector.
 
 <br>
 
