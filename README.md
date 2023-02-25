@@ -263,7 +263,7 @@ Blynk.email("xx@hotmail.com","AVISO!!", "Se supero la temperatura maxima!!.");
 
 </details>
 
-
+<br>
 
 ## Sección 3) Resultados y Conclusiones
 
