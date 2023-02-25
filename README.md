@@ -145,43 +145,47 @@ En la etapa inicial del proyecto se realizo el conexionado del sistema electrón
 2) Nos notificara a nuestra cuenta de Twitter en caso de que haya algún problema.
 3) Podremos Generar los reportes diarios, semanales, mensuales a cerca de los valores obtenidos de humedad y temperatura.
 
-![Index app](./doc/assets/img/f2.jpg)
+<img src="./doc/assets/img/f2.jpg" style="width: 50%; height: 50%"/>
+
 4) En caso de que nuestras alertas fallaran tenemos una interfaz de información acerca de la conexión de nuestro dispositivo IOT.
 5) En caso de que nuestras alertas fallen, tendremos una interfaz de información acerca de la conexión de nuestro dispositivo IOT.
 
 
-![Index app](./doc/assets/img/f3.jpg)
+<img src="./doc/assets/img/f3.jpg" style="width: 50%; height: 50%"/>
+
 6) Se puede observar la variación de Temperatura en el gráfico, está configurado para un máximo de 50°.
 
 
-![Index app](./doc/assets/img/f4.jpg)
+<img src="./doc/assets/img/f4.jpg" style="width: 50%; height: 50%"/>
+
 7) Cuando se supere el umbral de temperatura establecido se producirán destellos de un led a modo de advertencia.
 
 
 
 
-#### Librerías y Funciones:
-
+#### Driver
 * [IDE Arduino](https://docs.arduino.cc/software/ide-v1/tutorials/Windows)
 * [Driver Puerto Serial Esp](http://www.wch.cn/download/CH341SER_EXE.html)
-* Librerías:
-  * [SPI.h](https://docs.arduino.cc/learn/communication/spi)
-	* [ESP8266WiFi.h](https://github.com/esp8266/Arduino)
-	* [BlynkSimpleEsp8266.h](https://github.com/blynkkk/blynk-library)
-	* [SimpleTimer.h](https://github.com/jfturcot/SimpleTimer)
-	* [DHT.h](https://github.com/adafruit/DHT-sensor-library)
 
-* Funciones externas: 
-  * Serial.begin()
- 	* Blynk.begin()
-	* dht.readHumidity()
-	* dht.readTemperature()
-	* Blynk.virtualWrite()
-	* timer.setInterval()
-  * Blynk.run()
-	* timer.run()
+#### Librerías
+* [SPI.h](https://docs.arduino.cc/learn/communication/spi)
+* [ESP8266WiFi.h](https://github.com/esp8266/Arduino)
+* [BlynkSimpleEsp8266.h](https://github.com/blynkkk/blynk-library)
+* [SimpleTimer.h](https://github.com/jfturcot/SimpleTimer)
+* [DHT.h](https://github.com/adafruit/DHT-sensor-library)
+
+#### Funciones Externas
+* Serial.begin()
+* Blynk.begin()
+* dht.readHumidity()
+* dht.readTemperature()
+* Blynk.virtualWrite()
+* timer.setInterval()
+* Blynk.run()
+* timer.run()
 
 
+#### Otros
 - https://www.arduino.cc/
 - https://blynk.io/
 - https://fritzing.org/download/
