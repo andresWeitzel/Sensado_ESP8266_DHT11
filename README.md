@@ -12,20 +12,26 @@ Sistema de Control de sensado de temperatura y humedad con una placa ESP8266 y u
  
  <br>
  
-### Sección 1) Descripción, Tecnologías y Referencias
+### Sección 1) Descripción General y Ejecución
 
- - [1.0) Descripción del Proyecto.](#10-descripción-)
-    - [1.0.0) Objetivos y Finalidad.](#100-objetivos-y-finalidad)
-    - [1.0.1) Introducción.](#101-introducción)
-    - [1.0.2) Hardware.](#102-hardware)
-    - [1.0.3) Software.](#103-software)
-    - [1.0.4) Resultados y errores.](#104-resultados-y-errores)
-    - [1.0.5) F.O.D.A](#105-foda)
-    - [1.0.6) Conclusiones](#106-conclusiones)
- - [1.1) Ejecución del Proyecto.](#11-ejecución-del-proyecto-)
- - [1.2) Configurar un proyecto serverless desde cero](#12-configurar-un-proyecto-serverless-desde-cero-)
- - [1.3) Tecnologías.](#13-tecnologías-)
- - [1.4) Referencias.](#14-referencias-)
+  - [1.0) Descripción del Proyecto.](#10-descripción-)
+  - [1.1) Objetivos y Finalidad.](#11-objetivos-y-finalidad-)
+  - [1.2) Introducción.](#12-introducción-)
+  - [1.3) Ejecución del Proyecto.](#13-ejecución-del-proyecto-)
+   
+
+### Sección 2) Hardware y Software
+  
+  - [2.0) Hardware.](#20-hardware-)
+  - [2.1) Software.](#21-software-)
+
+
+### Sección 3) Resultados y Conclusiones
+
+  - [3.0) Resultados y errores.](#30-resultados-y-errores-)
+  - [3.1) F.O.D.A](#31-foda-)
+  - [3.2) Conclusiones](#32-conclusiones-)
+  - [3.3) Referencias.](#33-referencias-)
 
 <br>
 
@@ -35,12 +41,24 @@ Sistema de Control de sensado de temperatura y humedad con una placa ESP8266 y u
 
 <br>
 
-## Sección 1) Descripción, Tecnologías y Dependencias 
+## Sección 1) Descripción General y Ejecución 
 
 
 ### 1.0) Descripción [🔝](#índice-) 
 
-### 1.0.0) Objetivos y Finalidad
+<details>
+  <summary>Ver</summary>
+ 
+ <br>
+
+La motivación de este proyecto surgió en base a implementar algún sistema que nos permita tener una cómoda medición de rangos de temperatura y humedad sin tener que preocuparnos constantemente sobre el aparato del laboratorio, darles prioridad a otras tareas, agilizar tiempos y tener un mejor control sobre el mismo.
+ 
+<br>
+
+</details>
+
+
+### 1.1) Objetivos y Finalidad [🔝](#índice-)
 
 <details>
   <summary>Ver</summary>
@@ -48,11 +66,11 @@ Sistema de Control de sensado de temperatura y humedad con una placa ESP8266 y u
  <br>
 
  El propósito de este proyecto es la inclusión tecnológica por parte del personal que se desempeña en el sector de salud, específicamente en laboratorios. Como así también aumentar el sistema de medición y control en logística.
-La motivación surgió en base a implementar algún sistema que nos permita tener una cómoda medición de rangos de temperatura y humedad sin tener que preocuparnos constantemente sobre el aparato del laboratorio, darles prioridad a otras tareas, agilizar tiempos y tener un mejor control sobre el mismo.
+
 El destinatario del proyecto será el personal que se implemente en el área de salud, puntualmente en el sector descrito previamente
 La funcionalidad del proyecto es a un bajo costo de inversión, una implementación de un punto de sensado de temperatura y humedad controlado de forma automática y remota. El personal del sector podrá hacer uso de este sistema de sensado mediante una aplicación móvil, el uso de la misma es descrita en este informe.
-Las metodologías para el funcionamiento del dispositivo son:
 
+Las metodologías para el funcionamiento del dispositivo son:
 * Creación y estructuración del código del dispositivo de censado (Wemos d1 esp8266).
 
 * Descarga y configuración de la aplicación Blynk.
@@ -68,7 +86,7 @@ Las metodologías para el funcionamiento del dispositivo son:
 
 
 
-### 1.0.1) Introducción
+### 1.2) Introducción [🔝](#índice-)
 
 <details>
   <summary>Ver</summary>
@@ -91,7 +109,58 @@ En la etapa inicial del proyecto se realizo el conexionado del sistema electrón
 
 
 
-### 1.0.2) Hardware
+
+
+### 1.3) Ejecución del Proyecto [🔝](#índice-)
+
+<details>
+  <summary>Ver</summary>
+ 
+ 
+* Una vez creado un entorno de trabajo a través de algún ide, clonamos el proyecto
+```git
+git clone https://github.com/andresWeitzel/Sensado_ESP8266_DHT11
+```
+* Nos posicionamos sobre el proyecto
+```git
+cd 'projectName'
+```
+* Instalamos todas las librerías necesarias del proyecto desde el IDE de arduino
+```git
+#include <SPI.h>;
+#include <ESP8266WiFi.h>;
+#include <BlynkSimpleEsp8266.h>;
+#include <SimpleTimer.h>;
+#include <DHT.h>;
+```
+* Modificamos el auth generado desde BLYNK
+```git
+char auth[] = "_kc9BxuBX9RZHGFAk0TaZ59IT66TAdy1";
+```
+* Agregamos los valores correspondientes de nuestra red wifi
+```git
+char ssid[] = "xx";//nombre
+char pass[] = "xx";//password
+```
+* Añadimos un email para comprobar el punto de control de temperatura máxima
+```git
+Blynk.email("xx@hotmail.com","AVISO!!", "Se supero la temperatura maxima!!.");
+```
+* Nos conectamos desde BLYNK con la app. Escanear qr
+* App: https://play.google.com/store/apps/details?id=cc.blynk&hl=pt
+* Comprobamos que se reciban correctamente los datos.
+ 
+<br>
+
+</details>
+
+
+
+<br>
+
+## Sección 2) Hardware y Software
+  
+### 2.0) Hardware [🔝](#índice-)
 
 <details>
   <summary>Ver</summary>
@@ -120,8 +189,6 @@ En la etapa inicial del proyecto se realizo el conexionado del sistema electrón
 * Resolución Humedad: 1% RH
 * Tiempo de censado: 1 seg.
 
-
-
 <br>
 
 </details>
@@ -130,7 +197,7 @@ En la etapa inicial del proyecto se realizo el conexionado del sistema electrón
 
 
 
-### 1.0.3) Software
+### 2.1) Software [🔝](#índice-)
 
 <details>
   <summary>Ver</summary>
@@ -198,7 +265,11 @@ En la etapa inicial del proyecto se realizo el conexionado del sistema electrón
 
 
 
-### 1.0.4) Resultados y errores
+## Sección 3) Resultados y Conclusiones
+
+
+
+### 3.0) Resultados y errores [🔝](#índice-)
 
 <details>
   <summary>Ver</summary>
@@ -215,7 +286,7 @@ en relación al primero y la comunicación directa a internet mediante una placa
 
 
 
-### 1.0.5) F.O.D.A
+### 3.1) F.O.D.A [🔝](#índice-)
 
 <details>
   <summary>Ver</summary>
@@ -233,7 +304,7 @@ en relación al primero y la comunicación directa a internet mediante una placa
 
 
 
-### 1.0.6) Conclusiones
+### 3.2) Conclusiones [🔝](#índice-)
 
 <details>
   <summary>Ver</summary>
@@ -248,48 +319,22 @@ El proyecto incentivo a la aproximación del uso de sistemas IOT (internet de la
 </details>
 
 
-
-
-
-### 1.1) Ejecución del Proyecto [🔝](#índice-)
+### 3.3) Referencias [🔝](#índice-)
 
 <details>
   <summary>Ver</summary>
  
- 
-* Una vez creado un entorno de trabajo a través de algún ide, clonamos el proyecto
-```git
-git clone https://github.com/andresWeitzel/Sensado_ESP8266_DHT11
-```
-* Nos posicionamos sobre el proyecto
-```git
-cd 'projectName'
-```
-* Instalamos todas las librerías necesarias del proyecto desde el IDE de arduino
-```git
-#include <SPI.h>;
-#include <ESP8266WiFi.h>;
-#include <BlynkSimpleEsp8266.h>;
-#include <SimpleTimer.h>;
-#include <DHT.h>;
-```
-* Modificamos el auth generado desde BLYNK
-```git
-char auth[] = "_kc9BxuBX9RZHGFAk0TaZ59IT66TAdy1";
-```
-* Agregamos los valores correspondientes de nuestra red wifi
-```git
-char ssid[] = "xx";//nombre
-char pass[] = "xx";//password
-```
-* Añadimos un email para comprobar el punto de control de temperatura máxima
-```git
-Blynk.email("xx@hotmail.com","AVISO!!", "Se supero la temperatura maxima!!.");
-```
-* Nos conectamos desde BLYNK con la app. Escanear qr
-* App: https://play.google.com/store/apps/details?id=cc.blynk&hl=pt
-* Comprobamos que se reciban correctamente los datos.
- 
+ <br>
+
+* [Provecto](https://github.com/andresWeitzel/Sensado_ESP8266_DHT11/tree/master/DHT11_sensor_nodemcu)
+* [Wemos d1 esp8266](https://www.aprendiendoarduino.com/tag/wemos-d1-mini/)
+* [CH34 ESP8266 driver](http://www.wch.cn/download/CH341SER_EXE.html)
+* [Drivers ESP8266 driver](https://wiki.wemos.cc/downloads)
+
+
+
 <br>
 
 </details>
+
+
