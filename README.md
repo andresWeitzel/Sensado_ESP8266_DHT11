@@ -225,8 +225,7 @@ en relación al primero y la comunicación directa a internet mediante una placa
 
 | Fortalezas | Oportunidades | Debilidades | Amenazas |
 | ------------- | ------------- | ------------- | ------------- |
-| Fácil implementación y uso |  Bajo Costo y Proyecto Open Source | Lenguaje de Hipertexto | 
-| Conocimiento en Programación y Electrónica |  Inconvenientes en el uso de drivers y librerías para el ESP8266 |
+| Fácil implementación y uso |  Bajo Costo y Proyecto Open Source | Conocimiento en Programación y Electrónica |  Inconvenientes en el uso de drivers y librerías para el ESP8266 |
 
 <br>
 
