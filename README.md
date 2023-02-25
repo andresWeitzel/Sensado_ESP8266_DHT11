@@ -139,7 +139,7 @@ En la etapa inicial del proyecto se realizo el conexionado del sistema electrón
 
 #### Consideraciones Diagrama Plantilla SensadoLabo BLYNK:
 
-![Index app](./doc/assets/img/f1.jpg)
+<img src="./doc/assets/img/f1.jpg" style="width: 50%; height: 50%"/>
 
 1) Cuando el ESP8266 pierda conexión nos notificara mediante una alerta a nuestro teléfono (previamente configurado tanto el número y los permisos del mismo).
 2) Nos notificara a nuestra cuenta de Twitter en caso de que haya algún problema.
